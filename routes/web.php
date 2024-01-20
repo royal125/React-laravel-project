@@ -18,7 +18,7 @@ use Inertia\Inertia;
 Route::get('/', function () {
     return Inertia::render('Home');
 });
-Route::get('/signup',[ProfileController::class,'Signup']);
+Route::get('/register',[ProfileController::class,'Signup']);
 Route::get('/hm', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
@@ -28,7 +28,7 @@ Route::get('/hm', function () {
     ]);
 });
 
-Route::get('/signup',[ProfileController::class,'Signup']);
+
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
@@ -36,6 +36,6 @@ Route::get('/dashboard', function () {
 
 
   
-
+Route::post('/signup',[Apicontroller::class,'Registerform']);
 
 require __DIR__.'/auth.php';
